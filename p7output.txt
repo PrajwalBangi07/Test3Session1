@@ -1,1 +1,93 @@
+Breakpoint 1, main () at p7original.c:40
+warning: Source file is more recent than executable.
+40    f1=input();
+(gdb) s
+input () at p7original.c:7
+7   {
+(gdb) n
+9     printf("Enter the numerator and denomenator of the fraction:\n");
+(gdb) n
+Enter the numerator and denomenator of the fraction:
+10    scanf("%d %d",&f.num,&f.den);
+(gdb) n
+1 2
+11    return f;
+(gdb) n
+12  }
+(gdb) n
+main () at p7original.c:41
+41    f2=input();
+(gdb) s
+input () at p7original.c:7
+7   {
+(gdb) n
+9     printf("Enter the numerator and denomenator of the fraction:\n");
+(gdb) n
+Enter the numerator and denomenator of the fraction:
+10    scanf("%d %d",&f.num,&f.den);
+(gdb) n
+1 4
+11    return f;
+(gdb) n
+12  }
+(gdb) n
+main () at p7original.c:42
+42    sum=add(f1,f2);
+(gdb) s
+add (f1=..., f2=...) at p7original.c:17
+17    n1=f1.num;
+(gdb) n
+18    n2=f2.num;
+(gdb) n
+19    d1=f1.den;
+(gdb) n
+20    d2=f2.den;
+(gdb) n
+21    sum.den=d1*d2;
+(gdb) n
+22      sum.num=(n1*d2)+(n2*d1);
+(gdb) n
+23      for(int i=1;i<=sum.den;i++)
+(gdb) n
+25          if(sum.den%i == 0 && sum.num%i == 0)
+(gdb) n
+27              sum.den=sum.den/i;
+(gdb) n
+28              sum.num=sum.num/i;
+(gdb) n
+23      for(int i=1;i<=sum.den;i++)
+(gdb) n
+25          if(sum.den%i == 0 && sum.num%i == 0)
+(gdb) n
+27              sum.den=sum.den/i;
+(gdb) n
+28              sum.num=sum.num/i;
+(gdb) n
+23      for(int i=1;i<=sum.den;i++)
+(gdb) n
+25          if(sum.den%i == 0 && sum.num%i == 0)
+(gdb) n
+23      for(int i=1;i<=sum.den;i++)
+(gdb) n
+25          if(sum.den%i == 0 && sum.num%i == 0)
+(gdb) n
+23      for(int i=1;i<=sum.den;i++)
+(gdb) n
+31    return sum;
+(gdb) n
+32  }
+(gdb) n
+main () at p7original.c:43
+43    output(f1,f2,sum);
+(gdb) s
+output (f1=..., f2=..., sum=...) at p7original.c:35
+35    printf("%d/%d + %d/%d is %d/%d\n",f1.num,f1.den,f2.num,f2.den,sum.num,sum.den);
+(gdb) n
+1/2 + 1/4 is 3/4
+36  }
+(gdb) n
+main () at p7original.c:44
+44    return 0;
+(gdb) n
+45  }
 

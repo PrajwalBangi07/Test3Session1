@@ -1,1 +1,68 @@
+gcc -g p4original.c
+ ./a.out
+enter the degree of the polynomial
+2
+enter the value of x
+12
+enter the coefficient 3
+13
+enter the coefficient 2
+14
+enter the coefficient 1
+25
+13*x^2+14*x^1+25 at 12.000000 is 24780.000000
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x994: file p4original.c, line 41.
+(gdb) r
+Starting program: /home/runner/Test3Session1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p4original.c:41
+41  {
+(gdb) n
+43    d=input_degree()+1;
+(gdb) s
+input_degree () at p4original.c:3
+3   {
+(gdb) n
+5     printf("enter the degree of the polynomial\n");
+(gdb) n
+enter the degree of the polynomial
+6     scanf("%d",&n);
+(gdb) n
+n
+7     return n;
+(gdb) n
+9   }
+(gdb) n
+main () at p4original.c:45
+45    x=input_x();
+(gdb) s
+input_x () at p4original.c:11
+11  {
+(gdb) n
+13    printf("enter the value of x\n");
+(gdb) n
+enter the value of x
+14    scanf("%f",&n);
+(gdb) n
+15    return n;
+(gdb) n
+16  }
+(gdb) n
